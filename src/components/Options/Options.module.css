@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  background-color: rgba(211, 211, 211, 0.439);
+  border-radius: 4px;
+  font-size: 26px;
+  padding: 8px 12px;
+  font-weight: normal;
+  border: 1px solid black;
+}
