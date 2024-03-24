@@ -110,7 +110,7 @@ function App() {
           good={reviewsState.good}
           neutral={reviewsState.neutral}
           bad={reviewsState.bad}
-          total={totalFeedback}
+          totalFeedback={totalFeedback}
           positiveResult={positiveResult}
         />
       )}
