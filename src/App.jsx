@@ -32,29 +32,7 @@ function App() {
         bad: reviewsState.bad,
       })
     );
-  }, [reviewsState.good]);
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      "reviews",
-      JSON.stringify({
-        good: reviewsState.good,
-        neutral: reviewsState.neutral,
-        bad: reviewsState.bad,
-      })
-    );
-  }, [reviewsState.neutral]);
-
-  useEffect(() => {
-    window.localStorage.setItem(
-      "reviews",
-      JSON.stringify({
-        good: reviewsState.good,
-        neutral: reviewsState.neutral,
-        bad: reviewsState.bad,
-      })
-    );
-  }, [reviewsState.bad]);
+  }, [reviewsState.good, reviewsState.neutral, reviewsState.bad]);
 
   const totalFeedback =
     reviewsState.good + reviewsState.neutral + reviewsState.bad;
@@ -84,13 +62,10 @@ function App() {
   };
 
   function countPositiveResult() {
-    positiveResult = 100;
-    if (totalFeedback > 0) {
-      positiveResult = Math.round(
-        ((reviewsState.good + reviewsState.neutral) / totalFeedback) * 100
-      );
-      return positiveResult;
-    }
+    positiveResult = Math.round(
+      ((reviewsState.good + reviewsState.neutral) / totalFeedback) * 100
+    );
+    return positiveResult;
   }
 
   return (
